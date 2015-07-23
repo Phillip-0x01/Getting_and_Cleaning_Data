@@ -1,14 +1,8 @@
-list.of.packages <- c("dplyr", "downloader")
+list.of.packages <- c("dplyr")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 
-library(downloader)
 library(dplyr)
-
-#download files
-url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-download(url, dest="dataset.zip", mode="wb", quiet = TRUE) 
-unzip ("dataset.zip", exdir = "./")
 
 #import all of the data files into R workspace
 subject_test <- read.table("./UCI HAR Dataset/test/subject_test.txt", quote="\"")
@@ -39,7 +33,8 @@ df1$V1.1[df1$V1.1 == "5"] <- "standing"
 df1$V1.1[df1$V1.1 == "6"] <- "laying"
 
 #set column names to help identify data, know that V2:V561 is the X variables
-colnames(df1) <- c("subject", "activity", "X_mean", "Y_mean", "Z_mean", "X_sd", "Y_sd", "Z_sd")
+colnames(df1) <- c("subject", "activity", "tBodyAcc_X_mean", "tBodyAcc_Y_mean", "tBodyAcc_Z_mean", 
+                   "tBodyAcc_X_std", "tBodyAcc_Y_std", "tBodyAcc_Z_std")
 
 
 #start creating a dataset with the average of each variable for each activity and each subject
@@ -47,5 +42,6 @@ colnames(df1) <- c("subject", "activity", "X_mean", "Y_mean", "Z_mean", "X_sd", 
 grouped <- group_by(df1, subject, activity)
 
 #get the average for each meansurement variable and return it to df2
-df_2 <- summarise(grouped, avg_X_mean=mean(X_mean), avg_Y_mean=mean(Y_mean), 
-        avg_Z_mean=mean(Z_mean), avg_X_sd=mean(X_sd), avg_Y_sd=mean(Y_sd), avg_Z_sd=mean(Z_sd))
+df_2 <- summarise(grouped, avg_tBodyAcc_X_mean=mean(tBodyAcc_X_mean), avg_tBodyAcc_Y_mean=mean(tBodyAcc_Y_mean), 
+        avg_tBodyAcc_Z_mean=mean(tBodyAcc_Z_mean), avg_tBodyAcc_X_std=mean(tBodyAcc_X_std), 
+        avg_tBodyAcc_Y_std=mean(tBodyAcc_Y_std), avg_tBodyAcc_Z_std=mean(tBodyAcc_Z_std))
