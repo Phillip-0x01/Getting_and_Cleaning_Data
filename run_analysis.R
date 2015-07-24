@@ -45,3 +45,8 @@ grouped <- group_by(df1, subject, activity)
 df_2 <- summarise(grouped, avg_tBodyAcc_X_mean=mean(tBodyAcc_X_mean), avg_tBodyAcc_Y_mean=mean(tBodyAcc_Y_mean), 
         avg_tBodyAcc_Z_mean=mean(tBodyAcc_Z_mean), avg_tBodyAcc_X_std=mean(tBodyAcc_X_std), 
         avg_tBodyAcc_Y_std=mean(tBodyAcc_Y_std), avg_tBodyAcc_Z_std=mean(tBodyAcc_Z_std))
+
+#create txt output file
+write.table(df_2, file="./run_anaylsis.txt", row.name=FALSE)
+
+
