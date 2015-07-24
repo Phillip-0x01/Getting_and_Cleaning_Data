@@ -46,7 +46,7 @@ Running the script run_analysis.R will produce a tidy dataet which does the foll
 - Relabels the vectors in the data set with descriptive variable names. 
 - Creates a second, independent tidy data set with the average of each variable for each activity and each subject
 
-The final output file (df_2) includes the following variables:
+The final output file includes the following variables:
 
 - 'subject': a unique identifier of the subject who carried out the experiment.
 - 'activity': indicates what activty the subject was engaged in at the time the data was collected.
