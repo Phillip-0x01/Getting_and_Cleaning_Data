@@ -5,11 +5,9 @@ date: "July 23, 2015"
 output: html_document
 ---
 
-#Getting and Cleaning Data (Coursear) - Course Project
-***
+# Getting and Cleaning Data (Coursear) - Course Project
 
-##Data Background 
-***
+## Data Background 
 
 One of the most exciting areas in all of data science right now is wearable computing - see for example this article . Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advanced algorithms to attract new users. The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone.
 
@@ -18,8 +16,7 @@ The experiments have been carried out with a group of 30 volunteers within an ag
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
 
 
-##Orginal Data
-***
+## Orginal Data
 The oringal data for this analysis was sourced from:  [Source](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip )
 
 The zip folder contains the following files: 
@@ -36,8 +33,7 @@ The zip folder contains the following files:
 For more information about the data please see the readme.txt file above click on the following link: [More Information](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
 
 
-##Tidy Data
-***
+## Tidy Data
 Running the script run_analysis.R will produce a tidy dataet which does the following:
 
 - Merges the training and the test sets to create one data set.
@@ -58,8 +54,7 @@ The final output file includes the following variables:
 - 'avg_tBodyAcc_Z_std': the standard deviation of movements on the Z axis calculated by subject and activity
 
 
-##References
-***
+## References
 [1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
 [2] http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
